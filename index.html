@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Sergey Berdiugin</title>
+    <style>
+body{
+    padding-top: 15px;
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#cubeWraper{
+    display: flex;
+    justify-content: center;
+    perspective: 300px;
+}
+#cube{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    transform-origin: 50% 50% 100%;
+    transform-style: preserve-3d;
+    transition: transform,color,text-shadow 1s,1s,1s linear;
+}
+.side{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    font-size: 5em;
+    text-align: center;
+    line-height: 600px;
+    transform-origin: 50% 50% 100%;
+    backface-visibility: hidden;
+    background-size: 30%;
+}
+#side1{
+    transform: rotateY(90deg);
+}
+#side2{
+    transform: rotateY(-90deg);
+}
+#side3{
+    transform: rotateX(90deg) rotateY(90deg);
+}
+#side4{
+    transform: rotateX(-90deg) rotateY(-90deg);
+}   
+#side5{
+    transform: rotateX(180deg);
+}
+    </style>
+</head>
+<body>
+ <div id="cubeWraper">
+    <div id="cube">
+        <div class="side" id="side0">Sergey Berdiugin</div>
+        <div class="side" id="side1">Sergey Berdiugin</div>
+        <div class="side" id="side2">Sergey Berdiugin</div>
+        <div class="side" id="side3">Sergey Berdiugin</div>
+        <div class="side" id="side4">Sergey Berdiugin</div>
+        <div class="side" id="side5">Sergey Berdiugin</div>
+    </div>
+ </div>
+ <script>
+
+setInterval(function() {
+
+function getRandonInt(min,max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+let x = getRandonInt(0,360);
+let y = getRandonInt(0,360);
+let z = getRandonInt(0,360);
+let r = getRandonInt(0, 255);
+let g = getRandonInt(0, 255);
+let b = getRandonInt(0, 255);
+let a = getRandonInt(0, 10) * 0.1;
+
+cube.setAttribute(
+'style','transform:rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);' +
+'color: rgba(' + r + ',' + g + ',' + b +','+ a +');' +
+'text-shadow:' + (20 - x / 9 ) + 'px ' + (20 - y / 9) + 'px ' + (z / 36) + 'px ' + 'rgba(' + (255 - r) + ',' + (255 - g) + ',' + (255 - b) + ',' + (1 - a) + ');'
+);},1000);
+</script>
+</body>
+</html>
