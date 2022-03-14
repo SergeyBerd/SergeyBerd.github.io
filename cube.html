@@ -60,22 +60,20 @@ body{
     </div>
  </div>
  <script>
-        let angle,choice;
+   let x,y,z;
 
 function rotate() {
 
-   function getRandonInt(min,max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
+function getRandonInt(min,max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
-    angle = getRandonInt(0,360);
-    choice = getRandonInt(0,2);
+x = getRandonInt(0,360);
+y = getRandonInt(0,360);
+z = getRandonInt(0,360);
 
-if (choice === 2) cube.setAttribute('style','transform:rotateX(' + angle + 'deg);');
+cube.setAttribute('style','transform:rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);');
 
-else if (choice === 1)   cube.setAttribute('style','transform:rotateY(' + angle + 'deg);');
-
-else cube.setAttribute('style','transform:rotateZ(' + angle + 'deg);');
 }
 setInterval(rotate,1000);
  </script>
