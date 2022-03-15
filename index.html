@@ -7,6 +7,7 @@
 body{
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba( 0, 0, 0, 0);
 }
 #cubeWraper{
     display: grid;
@@ -22,7 +23,6 @@ body{
     transform-origin: 50% 50% 100%;
     transform-style: preserve-3d;
     transition: transform,color,text-shadow 1s,1s,1s linear;
-    margin: auto;
 }
 .side{
     width: 100%;
@@ -33,12 +33,13 @@ body{
     line-height: 1fr;
     transform-origin: 50% 50% 100%;
     backface-visibility: hidden;
+    
 }
 #side1{
-    transform: rotateY(90deg);
+    transform: rotateY(90deg) rotateX(90deg);
 }
 #side2{
-    transform: rotateY(-90deg);
+    transform: rotateY(-90deg) rotateX(-90deg);
 }
 #side3{
     transform: rotateX(90deg) rotateY(90deg);
