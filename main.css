@@ -74,6 +74,8 @@ header, footer, article, nav, aside{
     justify-items: center;
     text-align: center;
     transition: background-color 1s;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 header{
     grid-area: header;
