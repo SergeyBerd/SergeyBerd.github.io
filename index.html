@@ -3,52 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <title>Sergey Berdiugin</title>
-    <style>
-body{
-    overflow: hidden;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-#cubeWraper{
-    display: grid;
-    align-items: center;
-    perspective: 300px;
-    height: 100vh;
-}
-#cube{
-    position: relative;
-    width: 100%;
-    height: 1fr;
-    transform: rotateX(-90deg) rotateY(-90deg);
-    transform-origin: 50% 50% 100%;
-    transform-style: preserve-3d;
-    transition: transform,color,text-shadow 1s,1s,1s linear;
-}
-.side{
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    font-size: 5em;
-    text-align: center;
-    line-height: 100px;
-    transform-origin: 50% 50% 100%;
-    backface-visibility: hidden;
-}
-#side1{
-    transform: rotateY(90deg) rotateX(90deg);
-}
-#side2{
-    transform: rotateY(-90deg) rotateX(-90deg);
-}
-#side3{
-    transform: rotateX(90deg) rotateY(90deg);
-}
-#side4{
-    transform: rotateX(-90deg) rotateY(-90deg);
-}   
-#side5{
-    transform: rotateX(180deg);
-}
-    </style>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
  <div id="cubeWraper">
@@ -60,27 +15,58 @@ body{
         <div class="side" id="side4">Sergey Berdiugin</div>
         <div class="side" id="side5">Sergey Berdiugin</div>
     </div>
- </div>
- <script>
+</div>
+ <main id="mainWrapper">
+    <header>
+        <h1 id="title"></h1>
+    </header>
+    <article>
+        <div id="main">
+            <h2>front-end development</h2>
+            <p>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+            </p>   
+        </div>
+        <div id="aboutMe">
+            <h2>ВСЕМ ПРИВЕТ!</h2>
+            <img src="IMG_20190408_214709.jpg" width="30%"><br>
+            <strong>Меня зовут Сергей</strong>
+            <p>
+            Я разработчик самоучка прошёл много курсов, прочитал книг, просмотрел лекций и написал кода.
+            </p>
+            <p>
+            Что-то понял, что-то не понял, постоянно учусь, выбрал front-end разработку, как основное занятие.
+            </p>
+            <p>
+            Ищу сотрудничество с компаниями в которых возможно развитие и карьерный рост.
+            </p>
+        </div>
+        <div id="contact">
+            <a href="tel:+79538959983"><p>+79538959983</p></a>
+            <a href="https://api.whatsapp.com/send?phone=79538959983&text=%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20whatsapp%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83..."><span>whatsapp</span></a>
+            <a href="https://t.me/+fX6bFrAyNq1mYzFi"><span>telegram</span></a>
+            <a href="http://#"><span>viber</span></a>
+            <a href="mailto:sergey.berdiugin@gmail.com"><p>sergey.berdiugin@gmail.com</p></a>
+        </div>
+    </article>
+    <nav>
+        <button onclick="main()">Главная</button>
+        <button onclick="aboutMe()">Обо мне</button>
+        <button onclick="contact()">Контакты</button>
+    </nav>
+    <aside>
+        <p>Один из самых узнаваемыx брендов в сфере образования</p>
+        <img src="http://aik.elcos.ru/wp-content/uploads/2019/09/WhatsApp-Image-2021-09-24-at-03.16.04-1.jpeg" width="100%">
+        <p>Оплачивай обучение после трудоустройства</p>
+        <a href="https://synergy.ru/abiturientam/?partner=023984&utm_source=synergy_friends&utm_term=sf_lk_ref&marketer=SFR&produkt=74200971&utm_gen=3">
+        <p>Перейти</p>
+        </a>
+    </aside>
+    <footer><p id="clock"></p></footer>
+    </main>
 
-setInterval(function() {
-
-function getRandonInt(min,max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-let x = getRandonInt(0,360);
-let y = getRandonInt(0,360);
-let z = getRandonInt(0,360);
-let r = getRandonInt(0, 255);
-let g = getRandonInt(0, 255);
-let b = getRandonInt(0, 255);
-let a = getRandonInt(0, 10) * 0.1;
-
-cube.setAttribute(
-'style','transform:rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);' +
-'color: rgba(' + r + ',' + g + ',' + b +','+ a +');' +
-'text-shadow:' + (5 - x / 36 ) + 'px ' + (5 - y / 36) + 'px ' + (z / 36) + 'px ' + 'rgba(' + (255 - r) + ',' + (255 - g) + ',' + (255 - b) + ',' + (1 - a) + ');'
-);},1000);
-</script>
+ <script src="main.js"></script>
 </body>
 </html>
