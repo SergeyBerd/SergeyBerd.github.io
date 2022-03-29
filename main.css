@@ -102,6 +102,9 @@ button{
 #main, #aboutMe, #contact{
       display: none;
 }
+#main{
+    background: url(https://bessdbbs.000webhostapp.com/source/LfnKR1.jpg) 60% top;
+}
 #main>h2{
       text-transform: uppercase;
       position: absolute center;
