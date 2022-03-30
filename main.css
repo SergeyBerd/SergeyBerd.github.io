@@ -124,7 +124,7 @@ input{
 #contact{
     font-size: 2em;
 }
-  header :hover, footer :hover, article :hover, nav :hover, aside :hover{
+  header :hover, article :hover, nav :hover, aside :hover{
     animation: hover 1s linear infinite;
   }
   @keyframes hover{
