@@ -61,6 +61,7 @@ main{
     background: rgba(0, 0, 0, 0);
     position: absolute;
     opacity: 0;
+    transform: rotateX(90deg);
     transition: opacity,transform 2s,3s linear;
 }
 main :hover{
