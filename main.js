@@ -1,4 +1,4 @@
-setTimeout(() => {mainWrapper.setAttribute('style', 'opacity: 1;');}, 2000);
+setTimeout(() => {mainWrapper.setAttribute('style', 'opacity: 1;');transform: rotateX( 0deg);}, 2000);
 
 function main(){
     title.textContent = ('Главная');
