@@ -110,8 +110,16 @@ button{
       position: absolute center;
       font-size: 5em;
 }
-#aboutMe, #aboutMe>p, aside>p:hover, #contact, strong:hover{
+#aboutMe, #aboutMe>p, aside>p:hover, #contact{
       animation: none;
+}
+form{
+    position: absolute;
+    width: 75%;
+}
+input{
+    width: 50%;
+    opacity: .8;
 }
 #contact{
     font-size: 2em;
