@@ -6,7 +6,7 @@ body{
 #cubeWraper{
     display: grid;
     align-items: center;
-    perspective: 30px;
+    perspective: 3000px;
     height: 100vh;
     width: 100%;
     position: absolute;
