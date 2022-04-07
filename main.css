@@ -143,3 +143,18 @@ input{
         transform: scale(0.995);
       }
   }
+  @media screen and (orientation: portrait) {
+    main{ 
+        display: grid;
+        grid-template-areas: 
+          "header header header"
+          "nav nav nav"
+          "article article aside"
+          "footer footer footer";
+        grid-template-rows: 60px 60px 1fr 60px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav{
+       grid-auto-flow: column;
+    }
+}
