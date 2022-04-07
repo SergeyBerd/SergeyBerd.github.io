@@ -161,4 +161,7 @@ input{
      #aboutMe>img{
         width: 100%;
     }
+     button, input{
+     font-size: 2rem;
+    }
 }
