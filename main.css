@@ -2,6 +2,7 @@ body{
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+    font-size: 1rem;
 }
 #cubeWraper{
     display: grid;
@@ -109,7 +110,7 @@ button{
 #main>h2{
       text-transform: uppercase;
       position: absolute center;
-      font-size: 5em;
+      font-size: 5rem;
 }
 #aboutMe, #aboutMe>p, aside>p:hover, #contact{
       animation: none;
@@ -123,7 +124,7 @@ input{
     opacity: .8;
 }
 #contact{
-    font-size: 2em;
+    font-size: 2rem;
 }
   header :hover, article :hover, nav :hover, aside :hover{
     animation: hover 1s linear infinite;
