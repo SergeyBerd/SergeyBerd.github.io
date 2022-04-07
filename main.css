@@ -2,7 +2,6 @@ body{
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    font-size: 1rem;
 }
 #cubeWraper{
     display: grid;
@@ -145,6 +144,9 @@ input{
       }
   }
   @media screen and (orientation: portrait) {
+       body{
+        font-size: 2rem;
+    }
     main{ 
         display: grid;
         grid-template-areas: 
