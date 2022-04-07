@@ -157,4 +157,7 @@ input{
     nav{
        grid-auto-flow: column;
     }
+     #aboutMe>img{
+        width: 100%;
+    }
 }
