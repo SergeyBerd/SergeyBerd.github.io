@@ -145,15 +145,15 @@ input{
   }
   @media screen and (orientation: portrait) {
     main{
-        font-size: 2rem;
+        font-size: 1.5rem;
         display: grid;
         grid-template-areas: 
-          "header header header"
-          "nav nav nav"
-          "article article aside"
-          "footer footer footer";
+          "header header header header"
+          "nav nav nav nav"
+          "article article article aside"
+          "footer footer footer footer";
         grid-template-rows: 60px 60px 1fr 60px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     nav{
        grid-auto-flow: column;
