@@ -116,7 +116,7 @@ button{
 }
 form{
     position: absolute;
-    width: 75%;
+    width: 90%;
 }
 input{
     width: 50%;
@@ -163,5 +163,9 @@ input{
     }
      button, input{
      font-size: 2rem;
+    }
+    #main{
+        background-size: 100%;
+        font-size: 3rem;
     }
 }
