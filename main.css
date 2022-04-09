@@ -62,7 +62,7 @@ main{
     position: absolute;
     opacity: 0;
     transform: rotateX(90deg);
-    transition: opacity,transform 2s,3s linear;
+    transition: opacity,transform 2s,3s  cubic-bezier(.999, .05, 0, .95);
 }
 main :hover{
     background:linear-gradient( transparent,rgba(127, 127, 127, .5));
