@@ -178,6 +178,9 @@ input{
     form{
         width: 100%;
     }
+    #contact{
+    font-size: 3rem;
+}
 }
 @media screen and (max-width: 1000px) {
     #cubeWraper{
