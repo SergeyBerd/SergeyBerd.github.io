@@ -114,6 +114,9 @@ button{
 #aboutMe, #aboutMe>p, aside>p:hover, #contact{
       animation: none;
 }
+#aboutMe{
+    width: 66%
+}
 form{
     position: absolute;
     width: 75%;
