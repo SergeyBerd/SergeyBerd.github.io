@@ -65,7 +65,7 @@ main{
     transition: opacity,transform 2s,3s linear;
 }
 main :hover{
-    background: rgba(127, 127, 127, .5);
+    background:linear-gradient( transparent,rgba(127, 127, 127, .5));
 }
 header, footer, article, nav, aside{
     display: grid;
