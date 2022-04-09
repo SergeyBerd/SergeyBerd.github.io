@@ -83,6 +83,7 @@ header{
 }
 header>h1{
     position: absolute;
+    text-transform: uppercase;
 }
 footer{
     grid-area: footer;
@@ -109,7 +110,7 @@ button{
 #main>h2{
       text-transform: uppercase;
       position: absolute center;
-      font-size: 5rem;
+      font-size: 4rem;
 }
 #aboutMe, #aboutMe>p, aside>p:hover, #contact{
       animation: none;
