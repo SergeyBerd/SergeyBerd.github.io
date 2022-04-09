@@ -153,7 +153,7 @@ input{
           "nav nav nav nav"
           "article article article aside"
           "footer footer footer footer";
-        grid-template-rows: 60px 60px 1fr 60px;
+        grid-template-rows: 90px 90px 1fr 90px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     nav{
