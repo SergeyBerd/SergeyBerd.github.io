@@ -56,7 +56,7 @@ function Clock() {
 
     let clockString = h + ':' + m + ':' + s;
     
-    clock.textContent = clockString;
+    clock.innerHTML = clockString;
 }
 Clock();
 setInterval(Clock, 1000);
