@@ -58,5 +58,4 @@ function Clock() {
     
     clock.innerHTML = clockString;
 }
-Clock();
 setInterval(Clock, 1000);
