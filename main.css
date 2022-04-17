@@ -3,7 +3,7 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
 }
-#cubeWraper{
+#cubeWrapper{
     display: grid;
     align-items: center;
     perspective: 300px;
@@ -96,6 +96,9 @@ nav{
 }
 aside{ 
     grid-area: aside;
+}
+aside>img{
+    width: 100%;
 }
 button{
      cursor: pointer;
