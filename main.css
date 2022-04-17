@@ -186,7 +186,7 @@ input{
 }
 }
 @media screen and (max-width: 1000px) {
-    #cubeWraper{
+    #cubeWrapper{
         perspective: none;
     }
 }
