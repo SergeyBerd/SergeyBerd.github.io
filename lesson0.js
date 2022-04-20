@@ -17,6 +17,9 @@ function DELITE() {
         arr.innerHTML = 'unsorted array: ' + unsortedArray;
     }
 }
+function getRandonInt(min,max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 function createArray(){
     for(let i = 0;i < arrLength;i++){
         let j = getRandonInt(0, 9);
