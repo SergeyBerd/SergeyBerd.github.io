@@ -104,8 +104,11 @@ button{
      cursor: pointer;
      border: none;
 }
-#main, #aboutMe, #contact{
-     display: none;
+#main, #aboutMe, #contact, #lesson{
+      display: none;
+}
+#lesson{
+    overflow-x: auto;
 }
 #main{
     background: url(https://bessdbbs.000webhostapp.com/source/LfnKR1.jpg) 50% top;
