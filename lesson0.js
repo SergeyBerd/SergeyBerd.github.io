@@ -9,7 +9,7 @@ function ADD() {
 function MUL() {
     arrLength--;
     if (arrLength <= 0) arrLength = 0;
-    size.innerHTML = 'SIZE:' + arrLength;
+    size.innerHTML = 'SIZE: ' + arrLength;
 }
 function DELITE() {  
     for(let i = arrLength;i > 0;i--){
