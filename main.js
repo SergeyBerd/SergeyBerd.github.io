@@ -5,18 +5,28 @@ function main(){
     document.getElementById('main').style.display = 'inline';
     document.getElementById('aboutMe').style.display = 'none';
     document.getElementById('contact').style.display = 'none';
+    document.getElementById('lesson').style.display = 'none';
 }
 function aboutMe(){
     title.textContent = ('Обо мне');
     document.getElementById('main').style.display = 'none';
     document.getElementById('aboutMe').style.display = 'inline';
     document.getElementById('contact').style.display = 'none';
+    document.getElementById('lesson').style.display = 'none';
 } 
 function contact(){
     title.textContent = ('Контакты');
     document.getElementById('main').style.display = 'none';
     document.getElementById('aboutMe').style.display = 'none';
     document.getElementById('contact').style.display = 'inline';
+    document.getElementById('lesson').style.display = 'none';
+}
+function lesson(){
+    title.textContent = ('Уроки');
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('aboutMe').style.display = 'none';
+    document.getElementById('contact').style.display = 'none';
+    document.getElementById('lesson').style.display = 'inline';
 }
 setInterval(() => {
 
