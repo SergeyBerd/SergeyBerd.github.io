@@ -118,7 +118,7 @@ button{
       position: absolute center;
       font-size: 4rem;
 }
-#aboutMe, #aboutMe>p, aside>p:hover, #contact{
+#aboutMe, #aboutMe>p, aside>p:hover, #contact,  #lesson{
       animation: none;
 }
 #aboutMe>img{
