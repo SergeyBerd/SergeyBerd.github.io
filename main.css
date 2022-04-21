@@ -192,7 +192,7 @@ input{
     #cubeWrapper{
         perspective: none;
     }
-    #lesson{
+    #lesson, #lesson>button{
     font-size: 2rem;
 }
 }
