@@ -122,6 +122,9 @@ button{
     width: 66%;
     border-radius: 50%;
 }
+#lesson{
+    font-size: 1.2rem;
+}
 form{
     position: absolute;
     width: 75%;
@@ -189,4 +192,7 @@ input{
     #cubeWrapper{
         perspective: none;
     }
+    #lesson{
+    font-size: 2rem;
+}
 }
