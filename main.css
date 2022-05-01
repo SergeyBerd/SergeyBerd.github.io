@@ -119,8 +119,8 @@ button{
       animation: none;
 }
 #aboutMe>img{
-    width: 66%;
-    border-radius: 50%;
+    width: 27%;
+    border-radius: 5%;
 }
 #lesson{
     font-size: 1.2rem;
@@ -173,9 +173,6 @@ input{
      #aboutMe{
         width: 100%;
     }
-     #aboutMe>img{
-         width: 30%;
-      }
      button, input{
      font-size: 2rem;
     }
