@@ -84,6 +84,7 @@ header{
 header>h1{
     position: absolute;
     text-transform: uppercase;
+    font-family: 'roboto mono';
 }
 footer{
     grid-area: footer;
