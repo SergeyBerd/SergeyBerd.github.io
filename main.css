@@ -144,7 +144,7 @@ input{
       from{
         opacity: 1;
         transform: scale(1.005);
-        background: linear-gradient(#fff, #000);
+        background: linear-gradient(#fff, transparent);
         letter-spacing : .1em;
         border: 1px solid white;
       }
