@@ -1,7 +1,16 @@
 setTimeout(() => {mainWrapper.setAttribute('style', 'opacity: 1;transform: rotateX(0deg);');}, 2000);
 
+    
 function main(){
     title.textContent = ('Главная');
+
+    let parent = document.querySelector('header');
+    let div = document.createElement('div');
+    div.className = 'message';
+    parent.append(div);
+    div.innerHTML = '<span>ВСЕМ ПРИВЕТ!!!</span>';
+    setTimeout(() => div.remove(), 3000);
+
     document.getElementById('main').style.display = 'inline';
     document.getElementById('aboutMe').style.display = 'none';
     document.getElementById('contact').style.display = 'none';
@@ -9,6 +18,14 @@ function main(){
 }
 function aboutMe(){
     title.textContent = ('Обо мне');
+
+    let parent = document.querySelector('header');
+    let div = document.createElement('div');
+    div.className = 'message';
+    parent.append(div);
+    div.innerHTML = '<span>ПОЧИТАЙТЕ ОБО МНЕ</span>';
+    setTimeout(() => div.remove(), 3000);
+
     document.getElementById('main').style.display = 'none';
     document.getElementById('aboutMe').style.display = 'inline';
     document.getElementById('contact').style.display = 'none';
@@ -16,23 +33,24 @@ function aboutMe(){
 } 
 function contact(){
     title.textContent = ('Контакты');
+
+    let parent = document.querySelector('header');
+    let div = document.createElement('div');
+    div.className = 'message';
+    parent.append(div);
+    div.innerHTML = '<span>ПИШИТЕ, ЗВОНИТЕ...</span>';
+    setTimeout(() => div.remove(), 3000);
+
     document.getElementById('main').style.display = 'none';
     document.getElementById('aboutMe').style.display = 'none';
     document.getElementById('contact').style.display = 'inline';
     document.getElementById('lesson').style.display = 'none';
 }
-function lesson(){
-    title.textContent = ('Уроки');
-    document.getElementById('main').style.display = 'none';
-    document.getElementById('aboutMe').style.display = 'none';
-    document.getElementById('contact').style.display = 'none';
-    document.getElementById('lesson').style.display = 'inline';
-}
-setInterval(() => {
-
-    function getRandonInt(min,max) {
+function getRandonInt(min,max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
+setInterval(() => {
+    
     let x = getRandonInt(0, 360);
     let y = getRandonInt(0, 360);
     let z = getRandonInt(0, 360);
@@ -44,7 +62,7 @@ setInterval(() => {
     cube.setAttribute(
     'style','transform:rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);' +
     'color: rgba(' + r + ',' + g + ',' + b +','+ a +');' +
-    'text-shadow:' + (5 - x / 36 ) + 'px ' + (5 - y / 36) + 'px ' + (z / 36) + 'px ' + 'rgba(' + (255 - r) + ',' + (255 - g) + ',' + (255 - b) + ',' + (1 - a) + ');'
+    'text-shadow:' + (5 - x / 36) + 'px ' + (5 - y / 36) + 'px ' + (z / 36) + 'px ' + 'rgba(' + (255 - r) + ',' + (255 - g) + ',' + (255 - b) + ',' + (1 - a) + ');'
     );},1000);
 
     let clock = document.getElementById('clock');
@@ -56,16 +74,15 @@ function Clock() {
 
     if (h.length < 2) {
         h = '0' + h;
-    }
+}
     if (m.length < 2) {
         m = '0' + m;
-    }
+}
     if (s.length < 2) {
         s = '0' + s;
-    }
-
+}
     let clockString = h + ':' + m + ':' + s;
-    
+
     clock.innerHTML = clockString;
 }
 setInterval(Clock, 1000);
