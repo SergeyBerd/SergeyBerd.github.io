@@ -139,7 +139,15 @@ input{
 }
   header :hover, article :hover, nav :hover, aside :hover{
     animation: hover 1s linear infinite;
-  }
+}
+.message{
+    color: blue;
+    text-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px lime;
+    font-size: 3rem;
+    border-radius: 50%;
+    animation: hover 1.5s linear infinite;
+}
   @keyframes hover{
       from{
         opacity: 1;
