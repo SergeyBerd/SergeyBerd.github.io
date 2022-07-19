@@ -8,7 +8,7 @@ function main(){
     let div = document.createElement('div');
     div.className = 'message';
     parent.append(div);
-    div.innerHTML = '<span>ВСЕМ ПРИВЕТ!!!</span>';
+    div.innerHTML = '<span>HELLO♥_WorlD⇓!!!</span>';
     setTimeout(() => div.remove(), 3000);
 
     document.getElementById('main').style.display = 'inline';
