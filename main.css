@@ -2,6 +2,7 @@ body{
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+    
 }
 #cubeWrapper{
     display: grid;
@@ -20,6 +21,7 @@ body{
     transform-origin: 50% 50% 100%;
     transform-style: preserve-3d;
     transition: transform,color,text-shadow 1s,1s,1s linear;
+    background: url(http://skrinshoter.ru/s/281022/RN2xgusa?a);
 }
 .side{
     width: 100%;
@@ -31,19 +33,19 @@ body{
     transform-origin: 50% 50% 100%;
     backface-visibility: hidden;
 }
-#side1{
+.side1{
     transform: rotateY(90deg) rotateX(90deg);
 }
-#side2{
+.side2{
     transform: rotateY(-90deg) rotateX(-90deg);
 }
-#side3{
+.side3{
     transform: rotateX(90deg) rotateY(90deg);
 }
-#side4{
+.side4{
     transform: rotateX(-90deg) rotateY(-90deg);
 }   
-#side5{
+.side5{
     transform: rotateX(180deg);
 }
 main{ 
@@ -62,10 +64,10 @@ main{
     position: absolute;
     opacity: 0;
     transform: rotateX(90deg);
-    transition: opacity,transform 2s,3s  cubic-bezier(.999, .05, 0, .95);
+    transition: opacity,transform 2s,3s cubic-bezier(.999, .5, 0, .95);
 }
 main :hover{
-    background:linear-gradient( transparent,rgba(127, 127, 127, .5));
+    background: linear-gradient( transparent,rgba(127, 127, 127, .5));/* hsl(120, 75%, 75%) */
 }
 header, footer, article, nav, aside{
     display: grid;
@@ -74,7 +76,6 @@ header, footer, article, nav, aside{
     align-items: center;
     justify-items: center;
     text-align: center;
-    transition: background-color 1s;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -84,7 +85,6 @@ header{
 header>h1{
     position: absolute;
     text-transform: uppercase;
-    font-family: 'roboto mono';
 }
 footer{
     grid-area: footer;
@@ -102,26 +102,49 @@ aside>img{
     width: 100%;
 }
 button{
-     cursor: pointer;
-     border: none;
+    cursor: pointer;
+    border: none;
+}
+input{
+    width: 50%;
+    opacity: .8;
+}
+iframe{
+    width: 80%;
+    margin: 0 10% 0;
+    height: 600px;
+    transition: border-radius,width,margin 2s,2s,2s;
+}
+iframe:hover{
+    border-radius: 1%;
+    width: 100%;
+    margin: 1% 0 1%;
+}
+.doc{
+    width: 100%;
+    animation: none;
 }
 #main, #aboutMe, #contact, #lesson{
-      display: none;
+    display: none;
 }
 #main{
-    background: url(https://bessdbbs.000webhostapp.com/source/LfnKR1.jpg) 50% top;
+    background: url(C:/OSPanel/domains/next/source/LfnKR1.jpg) 50% top;
 }
 #main>h2{
-      text-transform: uppercase;
-      position: absolute center;
-      font-size: 4rem;
+    text-transform: uppercase;
+    position: absolute center;
+    font-size: 4rem;
 }
-#aboutMe, #aboutMe>p, aside>p:hover, #contact,  #lesson{
-      animation: none;
+#aboutMe, #aboutMe>p, aside>p:hover, #contact, #lesson{
+    animation: none;
 }
 #aboutMe>img{
     width: 27%;
     border-radius: 5%;
+    margin-bottom: 150px;
+}
+#aboutMe>strong{
+    margin-bottom: 100px;
 }
 #lesson{
     font-size: 1.2rem;
@@ -130,14 +153,10 @@ form{
     position: absolute;
     width: 75%;
 }
-input{
-    width: 50%;
-    opacity: .8;
-}
 #contact{
     font-size: 2rem;
 }
-  header :hover, article :hover, nav :hover, aside :hover{
+header :hover, article :hover, nav :hover, aside :hover{
     animation: hover 1s linear infinite;
 }
 .message{
@@ -151,16 +170,16 @@ input{
   @keyframes hover{
       from{
         opacity: 1;
-        transform: scale(1.005);
-        background: linear-gradient(#fff, transparent);
+        transform: scale(1.001);
         letter-spacing : .1em;
         border: 1px solid white;
+        background: linear-gradient(#fff, transparent);
       }
       to{
-        opacity: 0;
+        opacity: .9;
         border: 1px solid black;
-        background-color: rgba(255, 255, 255, 1);
-        transform: scale(0.995);
+        background-color: silver;
+        transform: scale(0.999);
         color: white;
       }
   }
@@ -173,38 +192,37 @@ input{
           "nav nav nav nav"
           "article article article aside"
           "footer footer footer footer";
-        grid-template-rows: 90px 90px 1fr 90px;
+        grid-template-rows: 60px 60px 1fr 60px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     nav{
        grid-auto-flow: column;
     }
-     #aboutMe{
+    #aboutMe{
         width: 100%;
     }
-     #aboutMe>img{
+    #aboutMe>img{
         width: 100%;
     }
-     button, input{
-     font-size: 2rem;
+    button, input{
+        font-size: 2rem;
     }
     #main{
-        background-size: 100%;
+        background-size: 60%;
         font-size: 3rem;
-        heigth: 40em;
     }
     form{
         width: 100%;
     }
     #contact{
-    font-size: 3rem;
-}
+        font-size: 3rem;
+    }
 }
 @media screen and (max-width: 1000px) {
     #cubeWrapper{
         perspective: none;
     }
     #lesson, #lesson>button{
-    font-size: 2rem;
-}
+        font-size: 2rem;
+    }
 }
