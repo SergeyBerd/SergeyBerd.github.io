@@ -83,7 +83,8 @@ function Clock() {
 }
     let clockString = h + ':' + m + ':' + s;
     
-    cubeWrapper.setAttribute('style', 'background: rgb('+ h * 10.625 + ','+ h * 10.625 +','+ h * 10.625 + ');');
+    let col = h < 12 ? h * 21.25 + m * 0.3541666 : 255 - (h * 21.25 + m * 0.3541666);
+    cubeWrapper.setAttribute('style', 'background: rgb('+ col + ','+ col +','+ col + ');');
 
     clock.innerHTML = clockString;
 }
