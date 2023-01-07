@@ -82,6 +82,8 @@ function Clock() {
         s = '0' + s;
 }
     let clockString = h + ':' + m + ':' + s;
+    
+    cubeWrapper.setAttribute('style', 'background: rgb('+ h * 10.625 + ','+ h * 10.625 +','+ h * 10.625 + ');');
 
     clock.innerHTML = clockString;
 }
