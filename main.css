@@ -169,6 +169,7 @@ header :hover, article :hover, nav :hover, aside :hover{
 #clock{
   position: absolute;
   font-size: 3em;
+  color: lime;
 }
   @keyframes hover{
       from{
