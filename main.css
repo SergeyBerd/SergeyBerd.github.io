@@ -2,7 +2,6 @@ body{
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    
 }
 #cubeWrapper{
     display: grid;
@@ -166,6 +165,10 @@ header :hover, article :hover, nav :hover, aside :hover{
     font-size: 3rem;
     border-radius: 50%;
     animation: hover 1.5s linear infinite;
+}
+#clock{
+  position: absolute;
+  font-size: 3em;
 }
   @keyframes hover{
       from{
