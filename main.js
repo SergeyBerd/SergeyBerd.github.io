@@ -83,7 +83,7 @@ function Clock() {
 }
     let clockString = h + ':' + m + ':' + s;
     
-    let col = h < 12 ? h * 21.25 + m * 0.3541666 : 255 - ((h - 12) * 10.625 + m * 0.17708333);
+    let col = h < 12 ? h * 21.333 + m * 0.355 : 255 - ((h - 12) * 21.333 + m * 0.355);
     cubeWrapper.setAttribute('style', 'background: rgb('+ col + ','+ col +','+ col + ');');
 
     clock.innerHTML = clockString;
