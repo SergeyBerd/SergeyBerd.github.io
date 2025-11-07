@@ -1,5 +1,377 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CLOCK</title>
+	<style>
+	/*:root{
+			--color: #066060;
+			--color_1: #272822;
+			--color_2: rgb(80, 0, 0);
+			--gradient: repeating-linear-gradient(var(--color_2) 44px, var(--color_2) 84px, transparent 84px, transparent 132px),
+						repeating-linear-gradient(transparent, transparent 40px, var(--color_1) 40px, var(--color_1) 44px),
+						repeating-linear-gradient(90deg, var(--color_2) -40px, var(--color_2) 40px, transparent 40px, transparent 44px);
+		}*/
+	body{
+		margin: 0;
+		padding: 0;
+		background: black;
+		font-family: monospace;
+		overflow: hidden;
+	}
+	#clockWrapper{
+		position: absolute;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		/*background: var(--gradient);*/
+		width: 100%;
+		height: 100%;
+	}
+	/*#clockWrapper::after{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url(mon.svg);
+			background-size: 84px 88px;
+		}*/
+	#clock{
+		text-align: center;
+		font-size: 20em;
+		text-shadow: 0 0 3px lime;
+		animation: tac 1s infinite reverse ease-out;
+	}
+	#clockSircle{
+		position: absolute;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		width: 540px;
+		height: 540px;
+		box-shadow: 0 0 1px lime;
+	}
+	#clockSircle>span{
+		text-shadow: 0 0 1px lime;
+		position: absolute;
+		font-size: 3em;
+		transition: transform 1s;
+	}
+	#hours, #minutes, #seconds{
+		position: absolute;
+		border-radius: 50%;
+		color: rgba( 0, 255, 0, .5);
+		text-align: center;
+		text-shadow: 0 -15px 1px rgba( 0, 255, 0, .5);
+		font-size: 1.8em;
+		box-shadow: 0 -1px 1px rgba( 0, 255, 0, .3);
+		transition: transform 1s linear;
+	}
+	#hours{
+		width: 60%;
+		height: 60%;
+	}
+	#minutes{
+		width: 80%;
+		height: 80%;
+	}
+	#seconds{
+		width: 102%;
+		height: 102%;
+	}
+	#utf{
+		position: fixed;
+		font-size: 2em;
+		color: #0b0;
+		text-decoration: overline;
+	}
+	#start{
+		position: absolute;
+		z-index: 1;
+		color: lime;
+		font-size: 5em;
+		cursor: pointer;
+		word-spacing: .6em;
+		transition: opacity, transform 1s, 1s;
+	}
+	#start:hover{
+		letter-spacing: 5px;
+		animation: tac 1s linear reverse infinite;
+	}
+	#GMT{
+		position: absolute;
+		overflow: hidden;
+		width: 540px;
+		height: 20px;
+		text-align: center;
+		color: lime;
+		transform: translateY(-295px);
+	}
+	#GMT>span{
+		position: absolute;
+		width: 120%;
+		animation: gmt 30s linear infinite;
+	}
+	#mS{
+		position: absolute;
+		overflow: hidden;
+		padding: 0;
+		width: 150px;
+		height: 30px;
+		color: #040;
+		text-align: center;
+		transform: translateY(180px);
+		font-size: 3em;
+	}
+	#mS_0, #mS_1, #mS_2{
+		width: 20%;
+		top: -9px;
+		position: absolute;
+		box-shadow: 0 30px 0 #0d0;
+		background: black;
+}
+	#mS_0{
+		left: 10%;
+	}
+	#mS_1{
+		left: 40%;
+		}
+	#mS_2{
+		left: 70%;
+	}
+	.alert{
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		font-family: cursive;
+		font-weight: lighter;
+		font-style: oblique;
+		color: #0a0;
+		top: 93%;
+	}
+	.alert>span{
+    animation: underline .2s infinite;
+}
+@keyframes underline{
+    from{
+        text-decoration: underline;
+    }
+    to{
+        text-decoration: none;
+    }
+}
+	span{
+		animation: tic 1s linear;
+	}
+	@keyframes gmt{
+		from{
+			transform: translateX(360px);
+		}
+		to{
+			transform: translateX(-900px);
+		}
+	}
+	@keyframes ms{
+		from{
+			transform: translateY(-460px);
+		}
+		to{
+			transform: translateY(0);
+		}
+	}
+	@keyframes tic{
+		from{
+			opacity: 0;
+			background: rgba( 0, 255, 0, .1);
+			border-radius: 100%;
+		}
+		to{
+			opacity: 1;
+			background: transparent;
+			box-shadow: 0 0 4px rgba( 0, 255, 0, .8);
+			transform: rotateY(360deg);
+		}
+	}
+	@keyframes tac{
+		from{
+			background: rgba( 0, 155, 0, .1);
+			border-radius: 100%;
+			transform: scale(.99);
+		}
+		to{
+			background: transparent;
+			box-shadow: 0 0 10px 5px rgba( 0, 255, 0, .2);
+		}
+	}
+	@media screen and (max-width: 1200px){
+		#clock{
+			font-size: 17em;
+		}
+	}
+	@media screen and (max-width: 1000px){
+		#clock{
+			font-size: 13em;
+		}
+	}
+	@media screen and (max-width: 800px){
+		#clock{
+			font-size: 9em;
+		}
+	}
+	</style>
+</head>
+<body>
+<div id="clockWrapper">
+
+<div id="GMT"></div>
+
+<div id="clock"></div>
+
+<div id="clockSircle">
+
+<span id="XII">&#8555</span>
+<span id="XI">&#8554</span>
+<span id="X">&#8553</span>
+<span id="IX"">&#8552</span>
+<span id="VIII">&#8551</span>
+<span id="VII">&#8550</span>
+<span id="VI"">&#8549</span>
+<span id="V">&#8548</span>
+<span id="IV">&#8547</span>
+<span id="III">&#8546</span>
+<span id="II">&#8545</span>
+<span id="I">&#8544</span>
+
+<div id="mS">
+	<div id="mS_2">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+
+	<div id="mS_1">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+
+	<div id="mS_0">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+</div>
+
+	<div id="hours"></div>
+	<div id="minutes"></div>
+	<div id="seconds"></div>
+	<div id="utf"></div>
+
+</div>
+
+<bitton id="start">START >TIME</bitton>
+</div>
+<script>
+
+function getRandonInt(min,max){return Math.round(Math.random() * (max - min)) + min;}
+
+let rand;
+
+function Clock() {
+
+    let time = new Date();
+    let h = (time.getHours() % 24).toString();
+    let m = time.getMinutes().toString();
+    let s = time.getSeconds().toString();
+
+hours.setAttribute('style', 'transform: rotate(' + h * 30 + 'deg);');
+hours.innerHTML = '<span></span><br><br><span></span><br><br><span></span><br>';
+minutes.setAttribute('style', 'transform: rotate(' + m * 6 + 'deg);');
+minutes.innerHTML = '<span></span><br><br><span></span><br><br><span></span><br><br><span></span><br>';
+seconds.setAttribute('style', 'transform: rotate(' + s * 6 + 'deg);');
+seconds.innerHTML = '<span>|</span><br>|<br><span>|</span><br>|<br><span>|</span><br>|<br><span>|</span><br>|<br><span>|</span><br>|';
+
+rand = getRandonInt(0, 65536);
+utf.innerHTML = '<span>&#' + rand + '</span>';
+
+    if (h.length < 2) {
+        h = '0' + h;
+}
+    if (m.length < 2) {
+        m = '0' + m;
+}
+    if (s.length < 2) {
+        s = '0' + s;
+}
+    let clockString = h + '<span>:</span>' + m + '<span>:</span>' + s;
+
+    clock.innerHTML = clockString;
+}
+document.getElementById('start').addEventListener('click', () => {
+
+clockSircle.setAttribute('style', 'animation: tac 1s infinite ease-out;');
+start.innerHTML = '<span>❤</span>';//&#36 &#128 &#165 &#20
+start.setAttribute('style', 'opacity: 0;transform: scale(10)');
+
+	mS.setAttribute('style', 'color: #0b0');
+	mS_0.setAttribute('style', 'animation: ms 10s linear infinite reverse;');
+	mS_1.setAttribute('style', 'animation: ms 1s linear infinite reverse;');
+	mS_2.setAttribute('style', 'animation: ms .1s linear infinite reverse;');
+
+I.setAttribute('style', 'transform: translateY(-233.8px) translateX(135px);');
+II.setAttribute('style', 'transform: translateY(-135px) translateX(233.8px);');
+III.setAttribute('style', 'transform: translateX(270px);');
+IV.setAttribute('style', 'transform: translateY(135px) translateX(233.8px);');
+V.setAttribute('style', 'transform: translateY(233.8px) translateX(135px);');
+VI.setAttribute('style', 'transform: translateY(270px);');
+VII.setAttribute('style', 'transform: translateY(233.8px) translateX(-135px);');
+VIII.setAttribute('style', 'transform: translateY(135px) translateX(-233.8px);');
+IX.setAttribute('style', 'transform: translateX(-270px);');
+X.setAttribute('style', 'transform: translateY(-135px) translateX(-233.8px);');
+XI.setAttribute('style', 'transform: translateY(-233.8px) translateX(-135px);');
+XII.setAttribute('style', 'transform: translateY(-270px);');
+
+setTimeout(() => {
+	start.setAttribute('style', 'display: none;');
+	let _$ = new Date();
+	GMT.innerHTML = '<span>START: ' + _$ + '</span>';
+}, 1000);
+
+setInterval(Clock, 1000);
+
+});
+
+</script>
+
+<script>//' &#32 &#928 P &#1048 B &#1045 T &nbsp M &#1048 P &#451 <br>&nbsp H E L L O &nbsp W O R L D &#' + 0b00100001 + ' &nbsp '
+
+        let s = 'psbn&#23000#&>rb<14#&):85#& 8601#&T8401#&TAKTO EH 8401#& 8601#&T8401#&BOHATCO EH 1701#&MEPB OT3601#& ,8601#&1501#&A6401#& KAK psbn&',
+            i = 0,
+            div = document.createElement('div'),
+            str = [];
+
+        div.className = 'alert';
+
+        setInterval(() => {
+
+        div.innerHTML = s.slice(0, i) + '<span>&nbsp</span>';
+
+        div.setAttribute('style', 'letter-spacing: ' + Math.floor(((s.length + 20) - i) * 0.2) + 'px;');
+        //console.log(s);
+        document.body.append(div);
+
+        i ++;
+
+        if (i > s.length){
+
+        str = s;
+
+        s = '';
+
+        for (; i > 1; i--) {
+
+        s += str[i - 2];
+        }
+        div.remove();
+        }
+        }, 250);
+
+</script>
+
+</body>
+</html>
+
+<!--html lang="ru">
 <head>
     <meta charset='utf-8'>
     <title>Sergey Berdiugin</title>
@@ -34,46 +406,6 @@
             </p>
         </div>
         <div id="aboutMe">
-            <!--h2>ВСЕМ ПРИВЕТ!</h2>
-            <img src="2022-05-02_233207.jpg" alt="это я"><br>
-            <strong>Меня зовут Сергей</strong>
-            <p>Мне 40лет</p>
-            <p>Я недaвно прошёл куры и получил сертефикаты<span>:</span></p>
-            <p>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-            </p>
-            <div class="doc"> 
-            <iframe src="Бердюгин Сергей Александрович.pdf"><span>*</span><span>*</span><span>*</span></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <div class="doc">
-            <iframe src="Osnovyi HTML i CSS verstki.pdf"></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <div class="doc">
-            <iframe src="Yazyik programmirovaniya JavaScript.pdf"></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <div class="doc">
-            <iframe src="Sistema kontrolya versiy Git.pdf"></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <div class="doc">
-            <iframe src="Metodologii Agile_Scrum.pdf"></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <div class="doc">
-            <iframe src="Soft skills.pdf"></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <div class="doc">
-            <iframe src="Itogovaya attestatsiya.pdf"></iframe>
-            </div>
-            <p><span>*</span><span>*</span><span>*</span></p>
-            <p>И что толку<span>?</span></p>
-            <p>Я всё ещё нищий и не нужный<span>.</span></p-->
         </div>
         <div id="contact">
             <a href="tel:+79538959983"><p>+79538959983</p></a>
@@ -89,12 +421,7 @@
         <button onclick="contact()">contact</button>
     </nav>
     <aside>
-        <!--p>Один из самых узнаваемыx брендов в сфере образования</p>
-        <img src="https://otrude.top/wp-content/uploads/2021/09/synergy_academy__middle.png" alt="Sinergy Academy">
-        <p>Оплачивай обучение после трудоустройства™</p>
-        <a href="https://synergy.ru/abiturientam/?partner=023984&utm_source=synergy_friends&utm_term=sf_lk_ref&marketer=SFR&produkt=74200971&utm_gen=3">
-        <p>Перейти</p>
-    </a-->
+
         <span id="clock"></span>
     </aside>
     <footer>
@@ -107,4 +434,4 @@
     </main>
     <script src="main.js"></script>
 </body>
-</html>
+</html-->
